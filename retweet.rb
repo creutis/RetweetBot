@@ -20,7 +20,7 @@ class RetweetBot
 	my_followers.each do |follower_id|
 		#Check the timeline for my follower
 		client.user_timeline(follower_id, result_type: "recent").each do |tweet|
-			#If a tweet includes #nairuby - retweet it
+			#If a tweet includes topic - retweet it
 			if tweet.text.include? topic
 				client.retweet(tweet.id)
 			end
